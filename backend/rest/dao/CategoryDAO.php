@@ -25,5 +25,12 @@ class CategoryDAO extends BaseDAO {
     public function deleteCategory($categoryID) {
         return $this->delete($categoryID);
     }
+
+    public function getByName($name) {
+        $stmt = $this->connection->prepare("SELECT * FROM Category WHERE CategoryName = :name");
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

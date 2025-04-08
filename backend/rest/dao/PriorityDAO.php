@@ -21,5 +21,13 @@ class PriorityDAO extends BaseDAO {
     public function deletePriority($priorityID) {
         return $this->delete($priorityID);
     }
+
+    public function getByName($name) {
+        $stmt = $this->connection->prepare("SELECT * FROM Priority WHERE PriorityLevel = :name");
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
 ?>

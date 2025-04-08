@@ -21,5 +21,12 @@ class StatusDAO extends BaseDAO {
     public function deleteStatus($statusID) {
         return $this->delete($statusID);
     }
+
+    public function getByName($name) {
+        $stmt = $this->connection->prepare("SELECT * FROM Status WHERE StatusName = :name");
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
