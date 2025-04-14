@@ -27,6 +27,15 @@ class CategoryService extends BaseService {
         }
     }
 
+    public function getById($id) {
+        $category = $this->dao->getById($id);
+        if (!$category) {
+            throw new Exception("Category not found.");
+        }
+        return $category;
+    }
+
+
     public function update($id, $data) {
         if (empty($data['CategoryName'])) {	
             throw new Exception("Category name cannot be empty.");

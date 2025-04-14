@@ -32,5 +32,20 @@ class CategoryDAO extends BaseDAO {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getIDByName($name) {
+        $stmt = $this->connection->prepare("SELECT {$this->primaryKey} FROM {$this->tableName} WHERE CategoryName = :name");
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result[$this->primaryKey] : null;
+    }
+
+    public function getSingleByName($name) {
+        $stmt = $this->connection->prepare("SELECT * FROM $this->tableName WHERE CategoryName = :name LIMIT 1");
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

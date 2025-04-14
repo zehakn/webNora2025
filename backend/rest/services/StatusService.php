@@ -27,6 +27,14 @@ class StatusService extends BaseService {
         return $status;
     }
 
+    public function getById($id) {
+        $status = $this->dao->getById($id);
+        if (!$status) {
+            throw new Exception("Status not found.");
+        }
+        return $status;
+    }
+
     public function update($id, $data) {
         if (empty($data['label'])) {
             throw new Exception("Status label is required.");

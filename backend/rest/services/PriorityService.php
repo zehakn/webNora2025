@@ -27,6 +27,15 @@ class PriorityService extends BaseService {
         }
     }
 
+    public function getById($id) {
+        $priority = $this->dao->getById($id);
+        if (!$priority) {
+            throw new Exception("Priority not found.");
+        }
+        return $priority;
+    }
+
+
     public function update($id, $data) {
         if (empty($data['PriorityLevel'])) {
             throw new Exception("Priority level is required.");

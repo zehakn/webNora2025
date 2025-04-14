@@ -50,8 +50,61 @@ class NotesService extends BaseService {
     }
 
     public function add($userID, $title, $content, $categoryID, $statusID, $priorityID) {
-        // Call the DAO's createNote method to insert a new note
+        
         return $this->dao->createNote($userID, $title, $content, $categoryID, $statusID, $priorityID);
+    }
+
+    public function addNoteByNames($userID, $title, $content, $categoryName, $statusName, $priorityLevel) {
+        $categoryDAO = new CategoryDAO();
+        $statusDAO = new StatusDAO();
+        $priorityDAO = new PriorityDAO();
+    
+        $category = $categoryDAO->getSingleByName($categoryName);
+        $status = $statusDAO->getSingleByName($statusName);
+        $priority = $priorityDAO->getSingleByName($priorityLevel);
+    
+        if (!$category || !$status || !$priority) {
+            throw new Exception("Invalid category, status, or priority name.");
+        }
+    
+        return $this->dao->createNote(
+            $userID,
+            $title,
+            $content,
+            $category['CategoryID'],
+            $status['StatusID'],
+            $priority['PriorityID']
+        );
+    }
+
+    public function getByTitle($title) {
+        $note = $this->dao->getNoteByTitle($title);
+        if ($note) {
+            return $note;
+        } else {
+            throw new Exception("Note with title '$title' not found.");
+        }
+    }
+
+    public function updateNoteByNames($noteID, $title, $content, $categoryName, $statusName, $priorityName) {
+        $categoryDAO = new CategoryDAO();
+        $statusDAO = new StatusDAO();
+        $priorityDAO = new PriorityDAO();
+        $notesDAO = new NotesDAO();
+    
+        $categoryID = $categoryDAO->getIDByName($categoryName);
+        $statusID = $statusDAO->getIDByName($statusName);
+        $priorityID = $priorityDAO->getIDByName($priorityName);
+    
+        if ($categoryID === null || $statusID === null || $priorityID === null) {
+            throw new Exception("Invalid category, status, or priority name provided.");
+        }
+    
+        return $notesDAO->updateNote($noteID, $title, $content, $categoryID, $statusID, $priorityID);
+    }
+
+    public function deleteNote($id) {
+        return $this->dao->deleteNote($id);
     }
 }
 
