@@ -28,7 +28,7 @@ class UserService extends BaseService {
     }
 
     public function update($id, $data) {
-        // Validate the data
+
         if (empty($data['email']) || empty($data['username']) || empty($data['fullName'])) {
             throw new Exception("Email, username, and full name are required.");
         }
@@ -40,5 +40,9 @@ class UserService extends BaseService {
         }
     
         return $user;
+    }
+
+    public function delete($id) {
+        return $this->dao->deleteUser($id);
     }
 }

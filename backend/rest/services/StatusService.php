@@ -9,10 +9,10 @@ class StatusService extends BaseService {
     }
 
     public function create($data) {
-        if (empty($data['label'])) {
+        if (empty($data['StatusName'])) {
             throw new Exception("Status label is required.");
         }
-        return $this->dao->createStatus($data['label']); 
+        return $this->dao->createStatus($data['StatusName']); 
     }
 
     public function getAll() {
@@ -36,10 +36,10 @@ class StatusService extends BaseService {
     }
 
     public function update($id, $data) {
-        if (empty($data['label'])) {
+        if (empty($data['StatusName'])) {
             throw new Exception("Status label is required.");
         }
-        return $this->dao->updateStatus($id, $data['label']);
+        return $this->dao->updateStatus($id, $data['StatusName']);
     }
 
     public function delete($id) {
