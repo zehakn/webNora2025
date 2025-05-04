@@ -62,7 +62,14 @@ class NotesDAO extends BaseDAO {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);   
     }
 
+    public function getNoteByID($noteID) {
+        $stmt = $this->connection->prepare("SELECT * FROM Notes WHERE NoteID = ?");
+        $stmt->execute([$noteID]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function deleteNote($noteID) {
+        
         return $this->delete($noteID);
     }
 }

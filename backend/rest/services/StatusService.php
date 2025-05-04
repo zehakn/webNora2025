@@ -43,6 +43,11 @@ class StatusService extends BaseService {
     }
 
     public function delete($id) {
+        
+        $status = $this->dao->getById($id);
+        if (!$status) {
+            throw new Exception("Status not found.");
+        }
         return $this->dao->deleteStatus($id);
     }
 }

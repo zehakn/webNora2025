@@ -44,6 +44,10 @@ class CategoryService extends BaseService {
     }
 
     public function delete($id) {
+        $category = $this->dao->getById($id);
+        if (!$status) {
+            throw new Exception("Category not found.");
+        }
         return $this->dao->deleteCategory($id);
     }
 }

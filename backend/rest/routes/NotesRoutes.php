@@ -232,3 +232,44 @@ Flight::route('DELETE /test-note/@id', function ($id) {
     }
 });
 
+/**
+ * @OA\Get(
+ *     path="/test-note/{id}",
+ *     summary="Get a note by ID",
+ *     tags={"Notes"},
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         required=true,
+ *         description="ID of the note",
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Note details"
+ *     ),
+ *     @OA\Response(
+ *         response=404,
+ *         description="Note not found"
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Internal server error"
+ *     )
+ * )
+ */
+Flight::route('GET /test-note/@id', function ($id) {
+    try {
+        $notesService = new NotesService();
+        $note = $notesService->getById($id);
+
+        if ($note) {
+            Flight::json($note);
+        } else {
+            Flight::json(['message' => 'Note not found'], 404);
+        }
+    } catch (Exception $e) {
+        Flight::json(['error' => $e->getMessage()], 500);
+    }
+});
+

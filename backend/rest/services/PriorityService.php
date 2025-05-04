@@ -42,8 +42,13 @@ class PriorityService extends BaseService {
         }
         return $this->dao->updatePriority($id, $data['PriorityLevel']);
     }
+    
 
     public function delete($id) {
+        $priority = $this->dao->getById($id);
+        if (!$priority) {
+            throw new Exception("Priority not found.");
+        }
         return $this->dao->deletePriority($id);
     }
 }

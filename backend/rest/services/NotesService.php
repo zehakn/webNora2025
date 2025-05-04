@@ -104,7 +104,20 @@ class NotesService extends BaseService {
     }
 
     public function deleteNote($id) {
+        
+        $note = $this->dao->getNoteByID($id);
+        if (!$note) {
+            throw new Exception("Note not found.");
+        }
         return $this->dao->deleteNote($id);
+    }
+
+    public function getById($id) {
+        $note = $this->dao->getNoteByID($id);
+        if (!$note) {
+            throw new Exception("Note not found.");
+        }
+        return $note;
     }
 }
 

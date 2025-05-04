@@ -220,16 +220,13 @@ Flight::route('PUT /test-user/@id', function ($id) {
 Flight::route('DELETE /test-user/@id', function ($id) {
     try {
         $userService = new UserService();
-        $user = $userService->getById($id);
-
-        if (!$user) {
-            Flight::json(['error' => 'User not found'], 404);
-            return;
-        }
-
         $userService->delete($id);
         Flight::json(['message' => 'User deleted']);
     } catch (Exception $e) {
-        Flight::json(['error' => $e->getMessage()], 400);
+        if ($e->getMessage() === 'User not found.') {
+            Flight::json(['error' => $e->getMessage()], 404);
+        } else {
+            Flight::json(['error' => $e->getMessage()], 400);
+        }
     }
 });
