@@ -85,5 +85,12 @@ class BaseDAO {
         $stmt->execute();
         return $stmt->fetchColumn();
     }
+
+    public function getByField($field, $value) {
+        $stmt = $this->connection->prepare("SELECT * FROM {$this->tableName} WHERE {$field} = :value");
+        $stmt->bindParam(':value', $value, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

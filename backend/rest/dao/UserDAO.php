@@ -7,10 +7,7 @@ class UserDAO extends BaseDAO {
     }
 
     public function getByEmail($email) {
-        $stmt = $this->connection->prepare("SELECT * FROM User WHERE Email = :email");
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $this->getByField('Email', $email);
     }
 
     public function createUser($username, $password, $fullName, $email) {
@@ -25,7 +22,7 @@ class UserDAO extends BaseDAO {
     }
 
     public function getAllUsers() {
-        return $this->fetchAll("SELECT * FROM User");
+        return $this->fetchAll();
     }
 
     public function updateUser($userID, $username, $fullName, $email) {
