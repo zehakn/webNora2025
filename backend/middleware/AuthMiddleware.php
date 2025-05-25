@@ -50,7 +50,7 @@ class AuthMiddleware {
        $errors = [];
        
        foreach ($rules as $field => $rule) {
-           // Parse rules (separated by |)
+           
            $ruleSet = explode('|', $rule);
            
            foreach ($ruleSet as $singleRule) {
@@ -116,7 +116,6 @@ class AuthMiddleware {
    public function log($message, $level = 'info') {
        $logDir = __DIR__ . '/../logs';
        
-       // Create logs directory if it doesn't exist
        if (!is_dir($logDir)) {
            mkdir($logDir, 0755, true);
        }
@@ -140,16 +139,14 @@ class AuthMiddleware {
            try {
                return call_user_func_array($callback, func_get_args());
            } catch (Exception $e) {
-               // Log the error
+               
                $this->log($e->getMessage(), 'error');
                
-               // Determine appropriate status code
                $statusCode = 500;
                if ($e->getCode() >= 400 && $e->getCode() < 600) {
                    $statusCode = $e->getCode();
                }
                
-               // Return consistent error response
                Flight::json([
                    'status' => 'error',
                    'message' => $e->getMessage()
