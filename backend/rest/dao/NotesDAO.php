@@ -3,7 +3,7 @@ require_once 'BaseDAO.php';
 
 class NotesDAO extends BaseDAO {
     public function __construct() {
-        parent::__construct("Notes", "NoteID");
+        parent::__construct("Notes");
     }
 
     public function getAllNotes() {

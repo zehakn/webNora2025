@@ -3,7 +3,7 @@ require_once 'BaseDAO.php';
 
 class StatusDAO extends BaseDAO {
     public function __construct() {
-        parent::__construct("Status", "StatusID");
+        parent::__construct("Status");
     }
 
     public function createStatus($name) {

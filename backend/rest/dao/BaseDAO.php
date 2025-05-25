@@ -1,33 +1,19 @@
 <?php
+require_once __DIR__ . '/../../config.php';
+
 class BaseDAO {
-    protected $connection;
+
     protected $tableName;
-    protected $primaryKey;
-
-    public function __construct($tableName, $primaryKey) {
+    protected $connection;
+    protected $primaryKey; 
+ 
+ 
+    public function __construct($tableName) {
         $this->tableName = $tableName;
-        $this->primaryKey = $primaryKey;
-        
-        try {
-            $dsn = "mysql:host=localhost;dbname=notesapp;charset=utf8mb4";
-            $username = "root";
-            $password = "";
-            $this->connection = new PDO($dsn, $username, $password);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Automatically detect primary key if not provided
-            if ($primaryKey === null) {
-                $this->primaryKey = $this->detectPrimaryKey();
-            } else {
-                $this->primaryKey = $primaryKey;
-            }
-
-        } catch (PDOException $e) {
-            die("Database connection failed: " . $e->getMessage());
-        }
+        $this->connection = Database::connect();
+        $this->primaryKey = $this->detectPrimaryKey(); 
     }
-
-
+        
     private function detectPrimaryKey() {
         $stmt = $this->connection->prepare("SHOW KEYS FROM $this->tableName WHERE Key_name = 'PRIMARY'");
         $stmt->execute();

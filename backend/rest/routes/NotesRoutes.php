@@ -17,6 +17,7 @@ require_once __DIR__ . '/../services/NotesService.php';
  * )
  */
 Flight::route('GET /test-notes', function () {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $notesService = new NotesService();
         $notes = $notesService->getAll();
@@ -53,6 +54,7 @@ Flight::route('GET /test-notes', function () {
  * )
  */
 Flight::route('GET /test-note-by-title/@title', function ($title) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $notesService = new NotesService();
         $note = $notesService->getByTitle($title);
@@ -99,6 +101,7 @@ Flight::route('GET /test-note-by-title/@title', function ($title) {
  * )
  */
 Flight::route('POST /add-note', function () {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         
         $userID = Flight::request()->data->userID;
@@ -159,6 +162,7 @@ Flight::route('POST /add-note', function () {
  * )
  */
 Flight::route('PUT /test-note/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData();
 
@@ -216,6 +220,7 @@ Flight::route('PUT /test-note/@id', function ($id) {
  * )
  */
 Flight::route('DELETE /test-note/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $notesService = new NotesService();
         $note = $notesService->getById($id);
@@ -259,6 +264,7 @@ Flight::route('DELETE /test-note/@id', function ($id) {
  * )
  */
 Flight::route('GET /test-note/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $notesService = new NotesService();
         $note = $notesService->getById($id);

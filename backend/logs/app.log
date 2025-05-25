@@ -1,0 +1,18 @@
+[2025-05-25 01:36:37][info][::1][guest] Registration attempt for email: nor@gmaiil.com
+[2025-05-25 01:36:37][info][::1][guest] User registered successfully: nor@gmaiil.com
+[2025-05-25 01:37:35][info][::1][guest] Registration attempt for email: nora@gmaiil.com
+[2025-05-25 01:37:36][info][::1][guest] User registered successfully: nora@gmaiil.com
+[2025-05-25 01:40:41][info][::1][guest] Registration attempt for email: mario@gmail.com
+[2025-05-25 01:40:41][info][::1][guest] User registered successfully: mario@gmail.com
+[2025-05-25 01:44:02][info][::1][guest] Login attempt for username: mario
+[2025-05-25 01:44:02][info][::1][guest] User logged in successfully: mario
+[2025-05-25 01:44:13][info][::1][guest] Login attempt for username: mario
+[2025-05-25 01:44:13][warning][::1][guest] Login failed for mario
+[2025-05-25 01:44:21][info][::1][guest] Login attempt for username: mario
+[2025-05-25 01:44:21][info][::1][guest] User logged in successfully: mario
+[2025-05-25 01:49:59][info][::1][guest] Registration attempt for email: marioz@gmail.com
+[2025-05-25 01:49:59][info][::1][guest] User registered successfully: marioz@gmail.com
+[2025-05-25 02:00:43][info][::1][guest] Registration attempt for email: marioz@gmail.com
+[2025-05-25 02:00:43][error][::1][guest] Registration failed: User with this email already exists
+[2025-05-25 02:01:05][info][::1][guest] Registration attempt for email: mariozehak@gmail.com
+[2025-05-25 02:01:05][info][::1][guest] User registered successfully: mariozehak@gmail.com

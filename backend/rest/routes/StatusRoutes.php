@@ -18,6 +18,7 @@ require_once __DIR__ . '/../services/StatusService.php';
  * )
  */
 Flight::route('GET /test-statuses', function() {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $statusService = new StatusService();
         $statuses = $statusService->getAll();
@@ -51,6 +52,7 @@ Flight::route('GET /test-statuses', function() {
  * )
  */
 Flight::route('GET /test-status-by-name/@name', function ($name) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $statusService = new StatusService();
         $status = $statusService->getByName($name); 
@@ -81,6 +83,7 @@ Flight::route('GET /test-status-by-name/@name', function ($name) {
  * )
  */
 Flight::route('POST /test-status', function () {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData(); 
         $statusService = new StatusService();
@@ -119,6 +122,7 @@ Flight::route('POST /test-status', function () {
  * )
  */
 Flight::route('PUT /test-status/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData(); 
         $statusService = new StatusService();
@@ -168,6 +172,7 @@ Flight::route('PUT /test-status/@id', function ($id) {
  * )
  */
 Flight::route('DELETE /test-status/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $statusService = new StatusService();
         $status = $statusService->getById($id);

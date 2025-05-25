@@ -17,6 +17,7 @@ require_once __DIR__ . '/../services/CategoryService.php';
  * )
  */
 Flight::route('GET /test-categories', function() {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $categoryService = new CategoryService();
         $categories = $categoryService->getAll();
@@ -49,6 +50,7 @@ Flight::route('GET /test-categories', function() {
  * )
  */
 Flight::route('GET /test-category-by-name/@name', function ($name) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $categoryService = new CategoryService();
         $category = $categoryService->getByName($name); 
@@ -81,6 +83,7 @@ Flight::route('GET /test-category-by-name/@name', function ($name) {
  * )
  */
 Flight::route('POST /test-category', function () {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData(); 
         $categoryService = new CategoryService();
@@ -121,6 +124,7 @@ Flight::route('POST /test-category', function () {
  * )
  */
 Flight::route('PUT /test-category/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData(); 
         $categoryService = new CategoryService();
@@ -159,6 +163,7 @@ Flight::route('PUT /test-category/@id', function ($id) {
  */
 
 Flight::route('DELETE /test-category/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $categoryService = new CategoryService();
         $category = $categoryService->getById($id);
