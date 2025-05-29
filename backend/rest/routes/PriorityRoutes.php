@@ -18,6 +18,7 @@ require_once __DIR__ . '/../services/PriorityService.php';
  * )
  */
 Flight::route('GET /test-priorities', function() {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $priorityService = new PriorityService();
         $priorities = $priorityService->getAll();
@@ -55,6 +56,7 @@ Flight::route('GET /test-priorities', function() {
  * )
  */
 Flight::route('GET /test-priority-by-name/@name', function ($name) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $priorityService = new PriorityService();
         $priority = $priorityService->getByName($name);
@@ -89,6 +91,7 @@ Flight::route('GET /test-priority-by-name/@name', function ($name) {
  * )
  */
 Flight::route('POST /test-priority', function () {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData();
         $priorityService = new PriorityService();
@@ -127,6 +130,7 @@ Flight::route('POST /test-priority', function () {
  * )
  */
 Flight::route('PUT /test-priority/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $data = Flight::request()->data->getData();
         $priorityService = new PriorityService();
@@ -176,6 +180,7 @@ Flight::route('PUT /test-priority/@id', function ($id) {
  * )
  */
 Flight::route('DELETE /test-priority/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $priorityService = new PriorityService();
         $priority = $priorityService->getById($id);

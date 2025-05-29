@@ -3,7 +3,7 @@ require_once 'rest/dao/BaseDAO.php';
 
 class UserDAO extends BaseDAO {
     public function __construct() {
-        parent::__construct("User", "UserID");
+        parent::__construct("User");
     }
 
     public function getByEmail($email) {

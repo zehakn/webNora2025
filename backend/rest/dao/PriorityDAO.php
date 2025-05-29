@@ -3,7 +3,7 @@ require_once 'BaseDAO.php';
 
 class PriorityDAO extends BaseDAO {
     public function __construct() {
-        parent::__construct("Priority", "PriorityID");
+        parent::__construct("Priority");
     }
 
     public function createPriority($name) {

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../services/UserService.php';
 
+
 /**
  * @OA\Get(
  *     path="/test-users",
@@ -17,6 +18,7 @@ require_once __DIR__ . '/../services/UserService.php';
  * )
  */
 Flight::route('GET /test-users', function () {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $userService = new UserService();
         $users = $userService->getAll();
@@ -49,6 +51,7 @@ Flight::route('GET /test-users', function () {
  * )
  */
 Flight::route('GET /test-user/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         $userService = new UserService();
         $user = $userService->getById($id);
@@ -81,6 +84,7 @@ Flight::route('GET /test-user/@id', function ($id) {
  * )
  */
 Flight::route('GET /test-user-by-email/@email', function ($email) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $userService = new UserService();
         $user = $userService->getByEmail($email);
@@ -115,8 +119,8 @@ Flight::route('GET /test-user-by-email/@email', function ($email) {
  * )
  */
 Flight::route('POST /test-user', function () {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
-   
         $data = Flight::request()->data->getData(); 
 
         $userService = new UserService();
@@ -161,6 +165,7 @@ Flight::route('POST /test-user', function () {
  * )
  */
 Flight::route('PUT /test-user/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRoles([Roles::ADMIN, Roles::USER]);
     try {
         
         $data = Flight::request()->data->getData();
@@ -218,6 +223,7 @@ Flight::route('PUT /test-user/@id', function ($id) {
  * )
  */
 Flight::route('DELETE /test-user/@id', function ($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     try {
         $userService = new UserService();
         $userService->delete($id);

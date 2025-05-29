@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Login | SimplyNote</title>
+    <link rel="icon" type="image/x-icon" href="assets/static/png-bow.jpg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../frontend/assets/css/styles.css">
+    <link rel="stylesheet" href="../frontend/assets/css/spapp.css">
+    <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html#home" style="color: #e1a8a8;">SimplyNote</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home" style="color: #e1a8a8;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#profile" style="color:#e1a8a8;">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html" style="color: #e1a8a8;">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html" style="color: #e1a8a8;">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#admin-dashboard" style="color: #e1a8a8;">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+      <div class="col-md-6">
+          <div class="card shadow-lg p-4">
+              <h2 class="text-center mb-4">Login</h2>
+              <form id="login-form">
+                  <div class="form-group mb-3">
+                      <label for="username">Username:</label>
+                      <input type="text" class="form-control" name="username" placeholder="Enter username or email" required>
+                  </div>
+                  <div class="form-group mb-3">
+                      <label for="password">Password:</label>
+                      <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Login</button>
+                  <p class="text-center mt-3">
+                    <a href="forgot-password.html">Forgot Password?</a>
+                  </p>
+                  <p class="text-center mt-3">Don't have an account? <a href="register.html">Register</a></p>
+              </form>
+          </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container px-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <p class="m-0" style="color: #e1a8a8;">© 2025 SimplyNote. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS imports -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+    <script src="../frontend/assets/js/jquery.spap.min.js"></script>
+    <script src="../frontend/assets/js/script.js"></script>
+    <script src="../frontend/utils/utils.js"></script>
+    <script src="../frontend/utils/constants.js"></script>
+    <script src="../frontend/services/user-service.js"></script>
+    <script>
+        // Initialize the UserService to handle login
+        UserService.init();
+    </script>
+</body>
+</html>

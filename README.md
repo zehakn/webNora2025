@@ -10,5 +10,8 @@ Developed backend functionality in PHP, including DAO classes for managing Users
 Milestone 3 deliverables: 
 Completed the full implementation of CRUD operations for all entities through service classes, ensuring the logic is modular and reusable. Integrated validation rules and specific business logic constraints within the services. Developed the presentation layer using FlightPHP to manage HTTP requests and provide dynamic JSON responses. Documented all API endpoints with the OpenAPI standard and generated a Swagger UI page for visual API documentation and testing.
 
+Milestone 4 deliverables:
+Implemented user authentication using FlightPHP with secure password hashing and session-based login. Developed middleware for request validation, authentication, basic logging, and error handling. Enforced role-based access control, allowing admins full CRUD capabilities while restricting regular users to limited access. Updated the frontend with dynamic UI components reflecting user roles.
+
 
 
