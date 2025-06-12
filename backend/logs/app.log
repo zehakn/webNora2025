@@ -72,3 +72,111 @@
 [2025-05-25 22:23:06][info][::1][guest] User logged in successfully: zehaknora
 [2025-05-25 22:28:20][info][::1][guest] Login attempt for username: zehaknora
 [2025-05-25 22:28:20][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-02 20:55:55][info][::1][guest] Registration attempt for email: nora.zehak@stu.ibu.edu.ba
+[2025-06-02 20:55:55][info][::1][guest] User registered successfully: nora.zehak@stu.ibu.edu.ba
+[2025-06-02 20:56:22][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 20:56:22][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 21:21:29][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 21:21:29][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 21:24:57][info][::1][guest] Registration attempt for email: janemariedoe@example.com
+[2025-06-02 21:24:57][info][::1][guest] User registered successfully: janemariedoe@example.com
+[2025-06-02 21:25:14][info][::1][guest] Login attempt for username: janemariedoe
+[2025-06-02 21:25:14][info][::1][guest] User logged in successfully: janemariedoe
+[2025-06-02 21:27:57][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 21:27:57][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 22:13:26][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 22:13:26][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 22:27:02][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 22:27:02][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:22:30][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:22:30][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:26:55][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:26:55][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:32:35][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:32:35][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:33:33][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:33:33][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:37:36][info][::1][guest] Registration attempt for email: janedoe1234@gmail.com
+[2025-06-02 23:37:36][error][::1][guest] Registration failed: User with this username already exists
+[2025-06-02 23:37:47][info][::1][guest] Registration attempt for email: janedoe1234@gmail.com
+[2025-06-02 23:37:48][info][::1][guest] User registered successfully: janedoe1234@gmail.com
+[2025-06-02 23:38:45][info][::1][guest] Login attempt for username: norarararaaa1234
+[2025-06-02 23:38:45][warning][::1][guest] Login failed for norarararaaa1234
+[2025-06-02 23:38:51][info][::1][guest] Login attempt for username: norarararaaa1234
+[2025-06-02 23:38:51][warning][::1][guest] Login failed for norarararaaa1234
+[2025-06-02 23:38:57][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:38:57][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:56:37][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-02 23:56:37][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-02 23:57:27][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-02 23:57:27][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 00:03:19][info][::1][guest] Registration attempt for email: greenparkhub@example.com
+[2025-06-03 00:03:19][info][::1][guest] User registered successfully: greenparkhub@example.com
+[2025-06-03 00:03:44][info][::1][guest] Login attempt for username: user235
+[2025-06-03 00:03:44][info][::1][guest] User logged in successfully: user235
+[2025-06-03 00:04:32][info][::1][guest] Login attempt for username: user235
+[2025-06-03 00:04:32][info][::1][guest] User logged in successfully: user235
+[2025-06-03 11:51:20][info][::1][guest] Login attempt for username: norarararaaa
+[2025-06-03 11:51:20][info][::1][guest] User logged in successfully: norarararaaa
+[2025-06-03 12:12:52][info][::1][guest] Registration attempt for email: janemariedoe33@example.com
+[2025-06-03 12:12:53][info][::1][guest] User registered successfully: janemariedoe33@example.com
+[2025-06-03 12:13:10][info][::1][guest] Login attempt for username: janemarie33
+[2025-06-03 12:13:10][warning][::1][guest] Login failed for janemarie33
+[2025-06-03 12:13:23][info][::1][guest] Login attempt for username: janemarie33
+[2025-06-03 12:13:23][warning][::1][guest] Login failed for janemarie33
+[2025-06-03 12:13:24][info][::1][guest] Login attempt for username: janemarie33
+[2025-06-03 12:13:24][warning][::1][guest] Login failed for janemarie33
+[2025-06-03 12:13:26][info][::1][guest] Login attempt for username: janemarie33
+[2025-06-03 12:13:26][warning][::1][guest] Login failed for janemarie33
+[2025-06-03 12:14:43][info][::1][guest] Registration attempt for email: katherine@example.com
+[2025-06-03 12:14:43][info][::1][guest] User registered successfully: katherine@example.com
+[2025-06-03 12:14:56][info][::1][guest] Login attempt for username: katherine
+[2025-06-03 12:14:56][info][::1][guest] User logged in successfully: katherine
+[2025-06-03 12:16:24][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 12:16:24][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 12:16:40][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 12:16:40][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 13:32:48][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 13:32:49][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 15:38:48][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 15:38:48][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 15:39:54][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 15:39:54][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 16:06:17][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 16:06:17][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-03 16:07:00][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-03 16:07:00][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-04 20:19:15][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-04 20:19:16][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-04 20:34:59][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-04 20:34:59][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-04 20:43:46][info][::1][guest] Login attempt for username: lamija
+[2025-06-04 20:43:46][info][::1][guest] User logged in successfully: lamija
+[2025-06-04 21:05:41][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-04 21:05:41][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-04 21:09:48][info][::1][guest] Login attempt for username: lamija
+[2025-06-04 21:09:49][info][::1][guest] User logged in successfully: lamija
+[2025-06-04 21:15:19][info][::1][guest] Login attempt for username: lamija
+[2025-06-04 21:15:19][info][::1][guest] User logged in successfully: lamija
+[2025-06-04 21:49:58][info][::1][guest] Login attempt for username: lamija
+[2025-06-04 21:49:58][info][::1][guest] User logged in successfully: lamija
+[2025-06-04 22:00:50][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-04 22:00:50][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-08 23:06:19][info][::1][guest] Login attempt for username: lamija
+[2025-06-08 23:06:19][info][::1][guest] User logged in successfully: lamija
+[2025-06-08 23:06:36][info][::1][guest] Login attempt for username: lamija
+[2025-06-08 23:06:36][info][::1][guest] User logged in successfully: lamija
+[2025-06-08 23:11:02][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-08 23:11:02][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-08 23:14:40][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-08 23:14:40][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-08 23:20:01][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-08 23:20:01][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-08 23:22:35][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-08 23:22:35][info][::1][guest] User logged in successfully: zehaknora
+[2025-06-08 23:25:59][info][::1][guest] Registration attempt for email: luke@example.com
+[2025-06-08 23:25:59][info][::1][guest] User registered successfully: luke@example.com
+[2025-06-08 23:26:10][info][::1][guest] Login attempt for username: luke
+[2025-06-08 23:26:10][info][::1][guest] User logged in successfully: luke
+[2025-06-08 23:31:00][info][::1][guest] Login attempt for username: zehaknora
+[2025-06-08 23:31:01][info][::1][guest] User logged in successfully: zehaknora
